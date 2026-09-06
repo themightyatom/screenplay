@@ -147,7 +147,7 @@ function sceneCard(item, draggable) {
   const card = el('div', {
     class: 'card' + (current && current.file === item.file && current.type === 'scenes' ? ' selected' : '') + (cover ? ' has-img' : ''),
     style: cover ? `--cover:url("/${encodeURI(cover).replace(/"/g, '%22')}")` : null,
-    draggable: draggable || null, dataset: { file: item.file }, title: 'click: details · double-click: write',
+    draggable: draggable ? 'true' : null, dataset: { file: item.file }, title: 'click: details · double-click: write · drag: move between columns',
     // single click waits a beat so a double-click (write mode) isn't pre-empted by the panel opening and reflowing the board
     onclick: () => { clearTimeout(sceneCard._t); sceneCard._t = setTimeout(() => go('scenes', item.file), 220); },
     ondblclick: () => { clearTimeout(sceneCard._t); go('scenes', item.file + '/write'); }
