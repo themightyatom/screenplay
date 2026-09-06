@@ -1,0 +1,28 @@
+{
+  "name": "The cyclist",
+  "active": true,
+  "age_1943": "",
+  "role": "Listener. Audience surrogate",
+  "fate": "",
+  "known": [],
+  "invented": [
+    "Fifties, tall, skinny, full kit every ride. Punctures at the bridge, sits down, is told the story.",
+    "Knows nothing. Rides across the bridge every week.",
+    "His modern life exists because of the bridge that just punctured his tyre.",
+    "Hold: may be Inger's grandchild. Don't decide yet."
+  ],
+  "arc": "",
+  "relationships": [
+    {
+      "character": "the_old_man",
+      "label": "listens to"
+    },
+    {
+      "character": "inger",
+      "label": "possibly grandchild of"
+    }
+  ],
+  "images": [],
+  "notes": "",
+  "sketch": ""
+}

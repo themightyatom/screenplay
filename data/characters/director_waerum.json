@@ -1,0 +1,24 @@
+{
+  "name": "Director Wærum, Scandia",
+  "active": false,
+  "age_1943": "",
+  "role": "Sven Johannesen's employer. The town's other opinion",
+  "fate": "",
+  "known": [
+    {
+      "fact": "Refuses to sign the clemency petition: no punishment too hard for people who destroy Danish property.",
+      "source": "CHARACTERS.md v1 (Straarup, RAHS 2020; research notes; Knud Birk memoir; Randers Kommune info board)"
+    }
+  ],
+  "invented": [],
+  "arc": "",
+  "relationships": [
+    {
+      "character": "sven_johannesen",
+      "label": "employer of"
+    }
+  ],
+  "images": [],
+  "notes": "",
+  "sketch": ""
+}

@@ -1,0 +1,14 @@
+{
+  "name": "langaa-screenplay",
+  "version": "0.1.0",
+  "description": "Local file-backed tool for developing the Langå screenplay",
+  "private": true,
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "seed": "node scripts/seed.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

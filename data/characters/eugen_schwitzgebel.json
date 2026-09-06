@@ -1,0 +1,44 @@
+{
+  "name": "Eugen Schwitzgebel",
+  "active": false,
+  "age_1943": "43",
+  "role": "Chief of Gestapo Jutland. The spine of Vogel",
+  "fate": "killed 31 Oct 1944, Aarhus",
+  "known": [
+    {
+      "fact": "Kriminalrat and SS-Hauptsturmführer (later Sturmbannführer), chief of Gestapo Jutland. 1900–1944.",
+      "source": "characters/The_German_Officer.md §1"
+    },
+    {
+      "fact": "Arrived Aarhus October 1943, six weeks before Langå, set up in dormitories 4 and 5 at Aarhus University.",
+      "source": "characters/The_German_Officer.md §1"
+    },
+    {
+      "fact": "Short, stocky Bavarian, ruthless, impatient, loved to terrorise his subordinates. \"Remarkably energetic\" at recruiting Danish informants.",
+      "source": "characters/The_German_Officer.md §1"
+    },
+    {
+      "fact": "Led raids in person: 13 Jan 1944, the Kæraas villa in Risskov, where a woman was shot dead in front of her seven-year-old.",
+      "source": "characters/The_German_Officer.md §1"
+    },
+    {
+      "fact": "Received Kaj Munk's murderers as honoured guests in January 1944 and proposed to hire them for reprisal bombings in Aarhus.",
+      "source": "characters/The_German_Officer.md §1"
+    },
+    {
+      "fact": "Killed at his desk 31 Oct 1944 when 25 Mosquitos flattened the dormitories. Buried Vestre Kirkegård, Copenhagen.",
+      "source": "characters/The_German_Officer.md §1"
+    }
+  ],
+  "invented": [],
+  "arc": "",
+  "relationships": [
+    {
+      "character": "ernst_vogel",
+      "label": "basis for"
+    }
+  ],
+  "images": [],
+  "notes": "",
+  "sketch": ""
+}

@@ -1,0 +1,38 @@
+{
+  "name": "The two reserve police guards (unnamed)",
+  "active": false,
+  "age_1943": "",
+  "role": "Bridge guards, in on the plan",
+  "fate": "",
+  "known": [
+    {
+      "fact": "One whistles \"Det var en lørdag aften\" as the all-clear when a stray shot nearly aborts the mission, having already phoned the main guard to check.",
+      "source": "CHARACTERS.md v1 (Straarup, RAHS 2020; research notes; Knud Birk memoir; Randers Kommune info board)"
+    },
+    {
+      "fact": "They surrender their pistols for appearances, are tied to a post out of blast range. One of their pistols later hangs Oluf Kroer.",
+      "source": "CHARACTERS.md v1 (Straarup, RAHS 2020; research notes; Knud Birk memoir; Randers Kommune info board)"
+    },
+    {
+      "fact": "What happened to them afterwards is a loose thread. Straarup: tied up after the charges were laid; info board: before.",
+      "source": "CHARACTERS.md v1 (Straarup, RAHS 2020; research notes; Knud Birk memoir; Randers Kommune info board)"
+    }
+  ],
+  "invented": [
+    "Ole identifies the whistle as a quarter-tone flat, the way that constable always whistles it."
+  ],
+  "arc": "",
+  "relationships": [
+    {
+      "character": "oluf_kroer",
+      "label": "his pistol hangs him"
+    },
+    {
+      "character": "ole_hovedskov",
+      "label": "whistle identified by"
+    }
+  ],
+  "images": [],
+  "notes": "",
+  "sketch": ""
+}

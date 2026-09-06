@@ -1,0 +1,48 @@
+{
+  "name": "Sven Christian Johannesen",
+  "active": false,
+  "age_1943": "20",
+  "role": "The young leader",
+  "fate": "shot Skæring Hede 2 Dec 1943",
+  "known": [
+    {
+      "fact": "Machinist at Scandia railway works, from Odense, Conservative Youth (KU), leader of two earlier sabotage groups.",
+      "source": "CHARACTERS.md v1 (Straarup, RAHS 2020; research notes; Knud Birk memoir; Randers Kommune info board)"
+    },
+    {
+      "fact": "Draws a pistol when the Gestapo break in.",
+      "source": "CHARACTERS.md v1 (Straarup, RAHS 2020; research notes; Knud Birk memoir; Randers Kommune info board)"
+    },
+    {
+      "fact": "Tells the court-martial his death will raise new fighters.",
+      "source": "CHARACTERS.md v1 (Straarup, RAHS 2020; research notes; Knud Birk memoir; Randers Kommune info board)"
+    },
+    {
+      "fact": "Hides a farewell note under a stamp: \"My God, My Country, My Honour.\"",
+      "source": "CHARACTERS.md v1 (Straarup, RAHS 2020; research notes; Knud Birk memoir; Randers Kommune info board)"
+    },
+    {
+      "fact": "Named to the interrogator by Anders Andersen, who was told his friend had already confessed.",
+      "source": "CHARACTERS.md v1 (Straarup, RAHS 2020; research notes; Knud Birk memoir; Randers Kommune info board)"
+    }
+  ],
+  "invented": [],
+  "arc": "",
+  "relationships": [
+    {
+      "character": "ole_hovedskov",
+      "label": "recruits (proposed); knows from KU dances"
+    },
+    {
+      "character": "director_waerum",
+      "label": "employer, who refuses to sign the clemency petition"
+    },
+    {
+      "character": "anders_andersen",
+      "label": "named by"
+    }
+  ],
+  "images": [],
+  "notes": "",
+  "sketch": ""
+}

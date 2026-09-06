@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Langå</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <nav id="nav">
+    <div class="brand">LANGÅ</div>
+    <a href="#scenes" data-view="scenes">Scenes</a>
+    <a href="#characters" data-view="characters">Characters</a>
+    <a href="#locations" data-view="locations">Locations</a>
+    <a href="#research" data-view="research">Research</a>
+    <a href="#framing" data-view="framing">Framing</a>
+    <div class="nav-gap"></div>
+    <a href="#script" data-view="script">Script</a>
+    <div class="nav-foot">files in <code>data/</code> are the truth</div>
+  </nav>
+  <main id="main"></main>
+  <aside id="panel" hidden></aside>
+</div>
+<div id="lightbox" hidden><img alt=""></div>
+<div id="toast" hidden></div>
+<script src="app.js"></script>
+</body>
+</html>

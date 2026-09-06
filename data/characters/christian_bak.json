@@ -1,0 +1,23 @@
+{
+  "name": "Christian Bak",
+  "active": false,
+  "age_1943": "",
+  "role": "The \"sabotage technician\". Municipal engineer",
+  "fate": "",
+  "known": [
+    {
+      "fact": "Calculates that 75 kg of 808 on the bearings and main girders will bring the bridges down.",
+      "source": "CHARACTERS.md v1 (Straarup, RAHS 2020; research notes; Knud Birk memoir; Randers Kommune info board)"
+    },
+    {
+      "fact": "Goes with the explosives to the burial site; a man who does the maths and then goes home.",
+      "source": "CHARACTERS.md v1 (Straarup, RAHS 2020; research notes; Knud Birk memoir; Randers Kommune info board)"
+    }
+  ],
+  "invented": [],
+  "arc": "",
+  "relationships": [],
+  "images": [],
+  "notes": "",
+  "sketch": ""
+}

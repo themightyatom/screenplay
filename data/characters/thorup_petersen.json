@@ -1,0 +1,32 @@
+{
+  "name": "Dr. Thorup Petersen",
+  "active": false,
+  "age_1943": "",
+  "role": "The driver. Randers physician with a car",
+  "fate": "",
+  "known": [
+    {
+      "fact": "Drives Hoff and Røjel to reconnoitre; drives the explosives to the plantation on 15 Nov.",
+      "source": "CHARACTERS.md v1 (Straarup, RAHS 2020; research notes; Knud Birk memoir; Randers Kommune info board)"
+    },
+    {
+      "fact": "Warns Røjel on the morning of 20 Nov that the arrests have begun.",
+      "source": "CHARACTERS.md v1 (Straarup, RAHS 2020; research notes; Knud Birk memoir; Randers Kommune info board)"
+    }
+  ],
+  "invented": [],
+  "arc": "",
+  "relationships": [
+    {
+      "character": "jorgen_rojel",
+      "label": "warns"
+    },
+    {
+      "character": "kai_hoff",
+      "label": "drives"
+    }
+  ],
+  "images": [],
+  "notes": "",
+  "sketch": ""
+}

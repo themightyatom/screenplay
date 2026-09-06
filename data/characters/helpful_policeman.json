@@ -1,0 +1,26 @@
+{
+  "name": "The helpful policeman (unnamed)",
+  "active": false,
+  "age_1943": "",
+  "role": "Danish officer who supplies the guard rota",
+  "fate": "",
+  "known": [
+    {
+      "fact": "Supplies the guard rota, post positions and shift times for the bridge.",
+      "source": "CHARACTERS.md v1 (Straarup, RAHS 2020; research notes; Knud Birk memoir; Randers Kommune info board)"
+    }
+  ],
+  "invented": [
+    "May be the same man as Carl Pedersen, or someone we invent."
+  ],
+  "arc": "",
+  "relationships": [
+    {
+      "character": "carl_pedersen",
+      "label": "possibly the same man"
+    }
+  ],
+  "images": [],
+  "notes": "",
+  "sketch": ""
+}

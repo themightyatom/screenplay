@@ -1,0 +1,34 @@
+{
+  "name": "Wilhelmine Hovedskov, née Hansen",
+  "active": false,
+  "age_1943": "",
+  "role": "Ole's mother",
+  "fate": "",
+  "known": [
+    {
+      "fact": "Née Hansen.",
+      "source": "characters/Ole_Hovedskov.md §1 KNOWN"
+    }
+  ],
+  "invented": [
+    "The one who noticed the almond smell. The household's intelligence service. Works out what Ole is doing at least a week before the bridge, and says nothing, because saying something would make her responsible for stopping him and she cannot decide whether she wants to."
+  ],
+  "arc": "",
+  "relationships": [
+    {
+      "character": "ole_hovedskov",
+      "label": "son"
+    },
+    {
+      "character": "borge_hovedskov",
+      "label": "son"
+    },
+    {
+      "character": "peter_valdemar_hovedskov",
+      "label": "husband"
+    }
+  ],
+  "images": [],
+  "notes": "",
+  "sketch": ""
+}

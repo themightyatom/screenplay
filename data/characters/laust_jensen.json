@@ -1,0 +1,24 @@
+{
+  "name": "Laust Jensen",
+  "active": false,
+  "age_1943": "",
+  "role": "Truck driver",
+  "fate": "Frøslev",
+  "known": [
+    {
+      "fact": "Caught with Hans Nissen collecting a compromised weapons drop at Tange Sø in 1944. Driver to Frøslev.",
+      "source": "CHARACTERS.md v1 (Straarup, RAHS 2020; research notes; Knud Birk memoir; Randers Kommune info board)"
+    }
+  ],
+  "invented": [],
+  "arc": "",
+  "relationships": [
+    {
+      "character": "hans_nissen",
+      "label": "drives for"
+    }
+  ],
+  "images": [],
+  "notes": "",
+  "sketch": ""
+}

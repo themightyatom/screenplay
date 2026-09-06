@@ -1,0 +1,24 @@
+{
+  "name": "Jens Toldstrup (Anton Ingersøn Jensen)",
+  "active": false,
+  "age_1943": "",
+  "role": "Commander of air-drop reception in Jutland",
+  "fate": "survived",
+  "known": [
+    {
+      "fact": "Tax collector turned commander of all air-drop reception in Jutland. Runs a courier network of women known as \"Toldstrup's girls\".",
+      "source": "CHARACTERS.md v1 (Straarup, RAHS 2020; research notes; Knud Birk memoir; Randers Kommune info board)"
+    }
+  ],
+  "invented": [],
+  "arc": "",
+  "relationships": [
+    {
+      "character": "gertrud_pedersen",
+      "label": "one of his girls"
+    }
+  ],
+  "images": [],
+  "notes": "",
+  "sketch": ""
+}

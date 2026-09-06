@@ -1,0 +1,35 @@
+{
+  "name": "Børge Hovedskov",
+  "active": false,
+  "age_1943": "33",
+  "role": "The painter. Ole's elder brother",
+  "fate": "survived; died 1966",
+  "known": [
+    {
+      "fact": "Born 1910. Academy-trained painter and sculptor. Married the painter \"Pepi\" (Agnethe Dahl).",
+      "source": "CHARACTERS.md v1 (Straarup, RAHS 2020; research notes; Knud Birk memoir; Randers Kommune info board)"
+    },
+    {
+      "fact": "Also in the resistance; sources disagree on whether he was at Langå.",
+      "source": "CHARACTERS.md v1 (Straarup, RAHS 2020; research notes; Knud Birk memoir; Randers Kommune info board)"
+    },
+    {
+      "fact": "Escapes to Sweden 1943, founds an art school in Gothenburg 1945, later designs a memorial to his dead comrades while his brother dies slowly.",
+      "source": "CHARACTERS.md v1 (Straarup, RAHS 2020; research notes; Knud Birk memoir; Randers Kommune info board)"
+    }
+  ],
+  "invented": [
+    "The resistance came to him first, through the art world, and he brought Ole in. He is out of the country before Ole is arrested.",
+    "Recommend: recruiter, not saboteur; in Sweden by December. His guilt is the engine of the brothers' scene at Vejlefjord."
+  ],
+  "arc": "",
+  "relationships": [
+    {
+      "character": "ole_hovedskov",
+      "label": "younger brother"
+    }
+  ],
+  "images": [],
+  "notes": "",
+  "sketch": ""
+}

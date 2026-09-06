@@ -1,0 +1,36 @@
+{
+  "name": "Ejvind Jacobsen",
+  "active": false,
+  "age_1943": "29",
+  "role": "\"Ravn\" (the Raven). Parachute-reception leader",
+  "fate": "survived; post-war city leader in Randers",
+  "known": [
+    {
+      "fact": "Municipal schoolteacher, FDF scout leader, runs a parachute-reception group.",
+      "source": "CHARACTERS.md v1 (Straarup, RAHS 2020; research notes; Knud Birk memoir; Randers Kommune info board)"
+    },
+    {
+      "fact": "Stays put for seven months under the Germans' noses, then escapes down a too-short paper rope from a second-floor balcony, breaks his foot, and is smuggled across Jutland to Sweden.",
+      "source": "CHARACTERS.md v1 (Straarup, RAHS 2020; research notes; Knud Birk memoir; Randers Kommune info board)"
+    },
+    {
+      "fact": "Works with Carl and Gertrud Pedersen on the drops; they are alerted via a butcher when he goes on the run.",
+      "source": "CHARACTERS.md v1 (Straarup, RAHS 2020; research notes; Knud Birk memoir; Randers Kommune info board)"
+    }
+  ],
+  "invented": [],
+  "arc": "",
+  "relationships": [
+    {
+      "character": "carl_pedersen",
+      "label": "works the drops with"
+    },
+    {
+      "character": "gertrud_pedersen",
+      "label": "works the drops with"
+    }
+  ],
+  "images": [],
+  "notes": "Age: notes \"unknown\", Straarup 29.",
+  "sketch": ""
+}

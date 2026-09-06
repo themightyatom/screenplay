@@ -1,0 +1,24 @@
+{
+  "number": 0,
+  "title": "The Bench",
+  "slug": "the_bench",
+  "strand": "NOW",
+  "date": "2026",
+  "location": "gudenaa_bench",
+  "characters": [
+    "the_old_man",
+    "the_cyclist"
+  ],
+  "summary": "Puncture. The cyclist sits. The old man says the bridge has been blown up twice, and points to where the other two stood. He begins.",
+  "purpose": "Opens the film. Sets the narrator's voice. Plants the question the cyclist can't yet ask: what has this got to do with me?",
+  "open": [
+    "See Framing: is the puncture too obvious?"
+  ],
+  "status": "discussed",
+  "script": "",
+  "images": [
+    "images/scenes/000_the_bench/PXL_20230729_101144350.PANO.jpg"
+  ],
+  "notes": "Where: the bench by the rust-red box bridge, 1862. Old railway embankment, now cycle path.\nWho: the old man. The cyclist: fifties, tall, skinny, all the gear.",
+  "sketch": ""
+}

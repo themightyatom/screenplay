@@ -1,0 +1,29 @@
+{
+  "name": "Inger",
+  "active": true,
+  "age_1943": "21",
+  "role": "The accompanist. Ole's girl (DECIDED 5 Sep 2026)",
+  "fate": "",
+  "known": [],
+  "invented": [
+    "Piano student at the same conservatory, a year older, from a farm outside Randers.",
+    "They play together for money: weddings, the Hotel Randers dining room, Saturday dances. Music gives them scenes with no dialogue.",
+    "The one waiting on the platform at the end of the white-bus journey, and the one who, in 1951, is asked by the family what to do with the violin.",
+    "The rule: she does not die, she does not betray, she does not become a symbol. She lives the six years of slow goodbye, and after 1951 she goes on.",
+    "The cyclist may be her grandchild. Hold."
+  ],
+  "arc": "",
+  "relationships": [
+    {
+      "character": "ole_hovedskov",
+      "label": "duo partner; the girl"
+    },
+    {
+      "character": "ernst_vogel",
+      "label": "is told her partner should be in Berlin"
+    }
+  ],
+  "images": [],
+  "notes": "",
+  "sketch": ""
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Viggo Torstensson",
+  "active": false,
+  "age_1943": "",
+  "role": "Journalist trainee",
+  "fate": "sentenced to death May 1944, reprieved",
+  "known": [
+    {
+      "fact": "Arrested with Ole Hovedskov on 30 Nov 1943, sentenced to death with him in May 1944, reprieved with him.",
+      "source": "CHARACTERS.md v1 (Straarup, RAHS 2020; research notes; Knud Birk memoir; Randers Kommune info board)"
+    },
+    {
+      "fact": "Shares Ole's whole arc except the illness.",
+      "source": "CHARACTERS.md v1 (Straarup, RAHS 2020; research notes; Knud Birk memoir; Randers Kommune info board)"
+    }
+  ],
+  "invented": [],
+  "arc": "",
+  "relationships": [
+    {
+      "character": "ole_hovedskov",
+      "label": "arrested and sentenced with"
+    }
+  ],
+  "images": [],
+  "notes": "",
+  "sketch": ""
+}

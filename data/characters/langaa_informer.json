@@ -1,0 +1,24 @@
+{
+  "name": "The Langå informer (unnamed)",
+  "active": false,
+  "age_1943": "",
+  "role": "Local man fishing for news of Knud",
+  "fate": "liquidated by the resistance near the war's end",
+  "known": [
+    {
+      "fact": "Visits Niels Birk fishing for news of Knud. Liquidated by the resistance near the war's end. A whole subplot in one sentence.",
+      "source": "CHARACTERS.md v1 (Straarup, RAHS 2020; research notes; Knud Birk memoir; Randers Kommune info board)"
+    }
+  ],
+  "invented": [],
+  "arc": "",
+  "relationships": [
+    {
+      "character": "niels_birk",
+      "label": "questions"
+    }
+  ],
+  "images": [],
+  "notes": "",
+  "sketch": ""
+}

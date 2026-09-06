@@ -1,0 +1,32 @@
+{
+  "name": "Günther Pancke",
+  "active": false,
+  "age_1943": "",
+  "role": "Higher SS and Police Leader",
+  "fate": "",
+  "known": [
+    {
+      "fact": "Promises Himmler that 24 arrested saboteurs will be tried and shot within days. The pressure behind the fourteen-day turnaround from bridge to firing squad.",
+      "source": "CHARACTERS.md v1 (Straarup, RAHS 2020; research notes; Knud Birk memoir; Randers Kommune info board)"
+    },
+    {
+      "fact": "At the Wolfsschanze asks for SS and police courts; refused. Later proposes one-to-one reprisals.",
+      "source": "CHARACTERS.md v1 (Straarup, RAHS 2020; research notes; Knud Birk memoir; Randers Kommune info board)"
+    }
+  ],
+  "invented": [],
+  "arc": "",
+  "relationships": [
+    {
+      "character": "werner_best",
+      "label": "at odds with"
+    },
+    {
+      "character": "ernst_vogel",
+      "label": "pressures"
+    }
+  ],
+  "images": [],
+  "notes": "",
+  "sketch": ""
+}

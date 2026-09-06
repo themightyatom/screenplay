@@ -1,0 +1,28 @@
+{
+  "name": "Gertrud Pedersen",
+  "active": false,
+  "age_1943": "",
+  "role": "One of Toldstrup's girls",
+  "fate": "",
+  "known": [
+    {
+      "fact": "Wife of Carl Pedersen, one of Toldstrup's girls, works with Ejvind Jacobsen on the drops.",
+      "source": "CHARACTERS.md v1 (Straarup, RAHS 2020; research notes; Knud Birk memoir; Randers Kommune info board)"
+    }
+  ],
+  "invented": [],
+  "arc": "",
+  "relationships": [
+    {
+      "character": "carl_pedersen",
+      "label": "husband"
+    },
+    {
+      "character": "jens_toldstrup",
+      "label": "courier for"
+    }
+  ],
+  "images": [],
+  "notes": "",
+  "sketch": ""
+}

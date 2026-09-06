@@ -1,0 +1,26 @@
+{
+  "number": 1,
+  "title": "Hotel Randers, Dining Room",
+  "slug": "hotel_randers_dining_room",
+  "strand": "THEN",
+  "date": "1943-10",
+  "location": "hotel_randers",
+  "characters": [
+    "ole_hovedskov",
+    "inger",
+    "ernst_vogel",
+    "ortskommandant_randers"
+  ],
+  "summary": "Saturday evening, autumn 1943. Ole and Inger play the dinner set: light classical, Danish songs, a little Lehár for the uniforms. Vogel requests Schubert. Ole plays it well. Vogel sends over a glass and his card: \"You should be in Berlin.\" Ole pockets it.",
+  "purpose": "Puts Ole and the officer in one room, on opposite sides of the same music, before either knows who the other is. Establishes the compromise: Ole takes German money. The card stays in his pocket until his arrest.",
+  "open": [
+    "Date: before or after 29 August 1943? (Recommend after.)",
+    "Does anyone at a Danish table look at Ole with contempt?",
+    "What Inger says on the walk home, if anything."
+  ],
+  "status": "discussed",
+  "script": "",
+  "images": [],
+  "notes": "Where: Hotel Randers, Torvegade. Est. 1856. Art Deco dining room. German use of the hotel is our invention; documented SS venue was Hotel Corner, Storegade.\nAlso present: two or three Wehrmacht officers from the Randers garrison, one senior. Randers bourgeoisie at the other tables. Waiters.\n\nOut: time-travel cut. From the empty bridge today to a black German steam engine rushing across in 1943. Loco: BR 52 Kriegslok, black, swastika flags on the front. DECIDED. See research: german_train.",
+  "sketch": "uicheck: the card in his pocket"
+}

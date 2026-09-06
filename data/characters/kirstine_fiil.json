@@ -1,0 +1,24 @@
+{
+  "name": "Kirstine Fiil",
+  "active": false,
+  "age_1943": "",
+  "role": "Daughter of Marius",
+  "fate": "life imprisonment; survived",
+  "known": [
+    {
+      "fact": "Life imprisonment. Survives to see her father, brother and husband reburied at Hvidsten.",
+      "source": "CHARACTERS.md v1 (Straarup, RAHS 2020; research notes; Knud Birk memoir; Randers Kommune info board)"
+    }
+  ],
+  "invented": [],
+  "arc": "",
+  "relationships": [
+    {
+      "character": "marius_fiil",
+      "label": "father"
+    }
+  ],
+  "images": [],
+  "notes": "",
+  "sketch": ""
+}

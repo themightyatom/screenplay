@@ -1,0 +1,40 @@
+{
+  "name": "Knud Birk",
+  "active": false,
+  "age_1943": "18–19",
+  "role": "The mechanic's son. Basis for the old man on the bench",
+  "fate": "survived (1924–2024)",
+  "known": [
+    {
+      "fact": "Only child of the Væthvej bicycle shop, standing on Langå platform with his toolbox that morning when a railway sleeper flies over the town.",
+      "source": "CHARACTERS.md v1 (Straarup, RAHS 2020; research notes; Knud Birk memoir; Randers Kommune info board)"
+    },
+    {
+      "fact": "Not involved in the bridges but later builds bombs in his bedroom, cycles them to the Viborg line, escapes to Sweden.",
+      "source": "CHARACTERS.md v1 (Straarup, RAHS 2020; research notes; Knud Birk memoir; Randers Kommune info board)"
+    }
+  ],
+  "invented": [],
+  "arc": "",
+  "relationships": [
+    {
+      "character": "niels_birk",
+      "label": "father"
+    },
+    {
+      "character": "ulla_birk",
+      "label": "mother"
+    },
+    {
+      "character": "the_old_man",
+      "label": "basis for"
+    },
+    {
+      "character": "langaa_informer",
+      "label": "asked after by"
+    }
+  ],
+  "images": [],
+  "notes": "",
+  "sketch": ""
+}

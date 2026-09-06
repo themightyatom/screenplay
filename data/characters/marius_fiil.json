@@ -1,0 +1,36 @@
+{
+  "name": "Marius Fiil",
+  "active": false,
+  "age_1943": "",
+  "role": "The innkeeper, Hvidsten Kro",
+  "fate": "shot Ryvangen June 1944",
+  "known": [
+    {
+      "fact": "Owner of Hvidsten Kro, leader of the receiver group that collects the Halifax drops, including the 80 kg for Langå on 15 Nov.",
+      "source": "CHARACTERS.md v1 (Straarup, RAHS 2020; research notes; Knud Birk memoir; Randers Kommune info board)"
+    },
+    {
+      "fact": "Arrested at dawn 11 Mar 1944 with his son Niels and son-in-law Peder Sørensen; all three shot at Ryvangen in June.",
+      "source": "CHARACTERS.md v1 (Straarup, RAHS 2020; research notes; Knud Birk memoir; Randers Kommune info board)"
+    }
+  ],
+  "invented": [],
+  "arc": "",
+  "relationships": [
+    {
+      "character": "kirstine_fiil",
+      "label": "daughter"
+    },
+    {
+      "character": "gerda_fiil",
+      "label": "daughter"
+    },
+    {
+      "character": "ole_geisler",
+      "label": "hosts his drops"
+    }
+  ],
+  "images": [],
+  "notes": "",
+  "sketch": ""
+}

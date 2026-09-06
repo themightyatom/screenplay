@@ -1,0 +1,56 @@
+{
+  "name": "Kriminalrat Ernst Vogel",
+  "active": true,
+  "age_1943": "43",
+  "role": "The German officer. Composite. SS-Sturmbannführer, Sicherheitspolizei",
+  "fate": "killed at his desk 31 Oct 1944 (as Schwitzgebel)",
+  "known": [
+    {
+      "fact": "COMPOSITE. Built from Eugen Schwitzgebel (the spine: rank, energy, informant-recruiting, death), Harvy Jensen (the face: the method), and the unnamed Truppen-Ortskommandant of Randers (the social man: the dinner table, the culture, the humiliation).",
+      "source": "characters/The_German_Officer.md §1"
+    },
+    {
+      "fact": "Name is a placeholder. \"Vogel\" echoes General Vogel von Falckenstein, who blew the same bridge in 1864.",
+      "source": "characters/The_German_Officer.md §1"
+    }
+  ],
+  "invented": [
+    "A German policeman of the professional kind. Kriminalrat is a civil police rank: a detective in Munich before he was ever SS. Likes music, genuinely, and knows enough to know Ole is good. In Denmark since 1940; three years of being polite in a country that was polite back. Believes on 16 Nov 1943 that he understands the Danes.",
+    "WANT: order. Denmark to stay the one posting in Europe where a policeman can do his job without becoming a butcher. Not a good man: a man who has arranged his life so he never has to find out what he is.",
+    "Langå takes that away. He chooses the police way over the SS way and it works, horribly well: a 22-year-old Danish interpreter and a kind voice break the network in two days without a blow. He has proven you don't need torture. He has also proven he will deliver five corpses on schedule.",
+    "THE TURN: Hoff, 30 November. The stove is lit. He leaves the room (recommended). It is worse. When Hoff is shot through the window, something in him decides he is exactly what the uniform says.",
+    "Then Hitler abolishes his method from above (30 Dec 1943). Kaj Munk in a ditch five days later. In January the murderers come through Aarhus and he gives them dinner.",
+    "He recognises the violinist in the cell. The one interrogation he conducts himself; he is gentle; it is the most frightening scene in the film.",
+    "His end: 31 Oct 1944, 11.30, at his desk in dormitory 4 when the Mosquitos arrive. The telegram that brought them was sent because of the chain that started at Langå. He doesn't know."
+  ],
+  "arc": "",
+  "relationships": [
+    {
+      "character": "ole_hovedskov",
+      "label": "hears him play; arrests and interrogates him"
+    },
+    {
+      "character": "inger",
+      "label": "tells her, in good Danish, that her partner should be in Berlin"
+    },
+    {
+      "character": "harvy_jensen",
+      "label": "watches him do the job better"
+    },
+    {
+      "character": "kai_hoff",
+      "label": "leaves the room"
+    },
+    {
+      "character": "eugen_schwitzgebel",
+      "label": "built on"
+    },
+    {
+      "character": "gunther_pancke",
+      "label": "pressed by"
+    }
+  ],
+  "images": [],
+  "notes": "Open: one man or two (keep Eriksen separate, recommended)? Is he in the room when Hoff dies (recommend: he leaves)? Name.",
+  "sketch": ""
+}

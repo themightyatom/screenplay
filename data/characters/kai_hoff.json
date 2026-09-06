@@ -1,0 +1,52 @@
+{
+  "name": "Kai Hannibal Hoff",
+  "active": false,
+  "age_1943": "30–31",
+  "role": "\"Carlo\". Leader of the Randers network",
+  "fate": "died 30 Nov 1943",
+  "known": [
+    {
+      "fact": "Adjunct teacher at Randers Statsskole, Winter War veteran from the Finnish army, runs the Terrain Sports Club as cover.",
+      "source": "CHARACTERS.md v1 (Straarup, RAHS 2020; research notes; Knud Birk memoir; Randers Kommune info board)"
+    },
+    {
+      "fact": "Leader of the whole Randers network. Refuses to flee after the arrests, is taken 30 Nov 1943.",
+      "source": "CHARACTERS.md v1 (Straarup, RAHS 2020; research notes; Knud Birk memoir; Randers Kommune info board)"
+    },
+    {
+      "fact": "Dies attacking a guard to escape a red-hot-stove interrogation at Thorsgade barracks; shot in the back through the window.",
+      "source": "CHARACTERS.md v1 (Straarup, RAHS 2020; research notes; Knud Birk memoir; Randers Kommune info board)"
+    },
+    {
+      "fact": "Buried at night in the memorial grove; Pastor Borchsenius forbidden to speak, sings instead. Next day the townspeople cover the grave in red and white flowers.",
+      "source": "CHARACTERS.md v1 (Straarup, RAHS 2020; research notes; Knud Birk memoir; Randers Kommune info board)"
+    }
+  ],
+  "invented": [],
+  "arc": "",
+  "relationships": [
+    {
+      "character": "jorgen_rojel",
+      "label": "plans the bridges with"
+    },
+    {
+      "character": "oluf_kroer",
+      "label": "old pupil"
+    },
+    {
+      "character": "thorup_petersen",
+      "label": "driven by"
+    },
+    {
+      "character": "ernst_vogel",
+      "label": "interrogated by / dies in his custody"
+    },
+    {
+      "character": "poul_borchsenius",
+      "label": "buried by"
+    }
+  ],
+  "images": [],
+  "notes": "Ages disagree: notes 31, Straarup 30.",
+  "sketch": ""
+}

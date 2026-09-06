@@ -1,0 +1,34 @@
+{
+  "name": "Carl Pedersen",
+  "active": false,
+  "age_1943": "",
+  "role": "Randers police officer",
+  "fate": "",
+  "known": [
+    {
+      "fact": "Works with Ejvind Jacobsen on the drops. Alerted, via a butcher, when Jacobsen goes on the run.",
+      "source": "CHARACTERS.md v1 (Straarup, RAHS 2020; research notes; Knud Birk memoir; Randers Kommune info board)"
+    }
+  ],
+  "invented": [
+    "May be the helpful policeman who supplies the bridge guard rota."
+  ],
+  "arc": "",
+  "relationships": [
+    {
+      "character": "gertrud_pedersen",
+      "label": "wife"
+    },
+    {
+      "character": "ejvind_jacobsen",
+      "label": "works the drops with"
+    },
+    {
+      "character": "helpful_policeman",
+      "label": "possibly the same man"
+    }
+  ],
+  "images": [],
+  "notes": "",
+  "sketch": ""
+}

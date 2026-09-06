@@ -1,0 +1,24 @@
+{
+  "name": "C.F.A. Warner",
+  "active": false,
+  "age_1943": "",
+  "role": "Foreign Office. One of the men in the wood-panelled room",
+  "fate": "",
+  "known": [
+    {
+      "fact": "His letters with Hugh Cumming (1944) decide whether Denmark is \"Allied\", \"associated\", or neither.",
+      "source": "CHARACTERS.md v1 (Straarup, RAHS 2020; research notes; Knud Birk memoir; Randers Kommune info board)"
+    }
+  ],
+  "invented": [],
+  "arc": "",
+  "relationships": [
+    {
+      "character": "hugh_cumming",
+      "label": "corresponds with"
+    }
+  ],
+  "images": [],
+  "notes": "",
+  "sketch": ""
+}

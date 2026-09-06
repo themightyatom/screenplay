@@ -1,0 +1,24 @@
+{
+  "name": "Pastor Poul Borchsenius",
+  "active": false,
+  "age_1943": "",
+  "role": "Buries Kai Hoff",
+  "fate": "",
+  "known": [
+    {
+      "fact": "Forbidden to speak at Kai Hoff's night-time burial, so he sings instead. Next day the townspeople cover the grave in red and white flowers.",
+      "source": "CHARACTERS.md v1 (Straarup, RAHS 2020; research notes; Knud Birk memoir; Randers Kommune info board)"
+    }
+  ],
+  "invented": [],
+  "arc": "",
+  "relationships": [
+    {
+      "character": "kai_hoff",
+      "label": "buries"
+    }
+  ],
+  "images": [],
+  "notes": "",
+  "sketch": ""
+}

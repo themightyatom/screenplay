@@ -1,0 +1,32 @@
+{
+  "name": "Ole Geisler",
+  "active": false,
+  "age_1943": "",
+  "role": "SOE captain. Parachuted British organiser",
+  "fate": "",
+  "known": [
+    {
+      "fact": "Gives Røjel the order to hit the bridges and sets off around fifteen sabotages across Jutland in the same days.",
+      "source": "CHARACTERS.md v1 (Straarup, RAHS 2020; research notes; Knud Birk memoir; Randers Kommune info board)"
+    },
+    {
+      "fact": "Attends every Hvidsten drop; his tolerance of parachutists lodging at the inn is the crack the Gestapo later widen.",
+      "source": "CHARACTERS.md v1 (Straarup, RAHS 2020; research notes; Knud Birk memoir; Randers Kommune info board)"
+    }
+  ],
+  "invented": [],
+  "arc": "",
+  "relationships": [
+    {
+      "character": "jorgen_rojel",
+      "label": "gives orders to"
+    },
+    {
+      "character": "marius_fiil",
+      "label": "attends his drops"
+    }
+  ],
+  "images": [],
+  "notes": "",
+  "sketch": ""
+}

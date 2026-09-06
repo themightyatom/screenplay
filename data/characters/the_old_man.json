@@ -1,0 +1,26 @@
+{
+  "name": "The old man on the bench",
+  "active": true,
+  "age_1943": "",
+  "role": "Narrator",
+  "fate": "",
+  "known": [],
+  "invented": [
+    "Never named. Based on Knud Birk (1924–2024), who stood on Langå platform the morning the sleeper flew.",
+    "Carries both the heroes' story and the town's compromises."
+  ],
+  "arc": "",
+  "relationships": [
+    {
+      "character": "knud_birk",
+      "label": "based on"
+    },
+    {
+      "character": "the_cyclist",
+      "label": "tells the story to"
+    }
+  ],
+  "images": [],
+  "notes": "",
+  "sketch": ""
+}

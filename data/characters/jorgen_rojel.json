@@ -1,0 +1,52 @@
+{
+  "name": "Jørgen Røjel",
+  "active": false,
+  "age_1943": "27",
+  "role": "The doctor. SOE's planner for the bridges",
+  "fate": "survived; died aged 90",
+  "known": [
+    {
+      "fact": "Junior doctor at Randers Hospital since August 1943, ordered by SOE (Geisler) to plan the bridges and stay away from every other illegal circle.",
+      "source": "CHARACTERS.md v1 (Straarup, RAHS 2020; research notes; Knud Birk memoir; Randers Kommune info board)"
+    },
+    {
+      "fact": "Goes to bed convinced the fuses have failed, hears the first blast from his pillow.",
+      "source": "CHARACTERS.md v1 (Straarup, RAHS 2020; research notes; Knud Birk memoir; Randers Kommune info board)"
+    },
+    {
+      "fact": "Warned by Dr Thorup Petersen on the morning of 20 Nov that the arrests have begun; flees to Sweden two days later.",
+      "source": "CHARACTERS.md v1 (Straarup, RAHS 2020; research notes; Knud Birk memoir; Randers Kommune info board)"
+    },
+    {
+      "fact": "Lives to 90 and writes the books everyone else quotes.",
+      "source": "CHARACTERS.md v1 (Straarup, RAHS 2020; research notes; Knud Birk memoir; Randers Kommune info board)"
+    },
+    {
+      "fact": "Called Harvy Jensen a traitor for 27 years, read the case file in 2000, and wasn't sure any more.",
+      "source": "CHARACTERS.md v1 (Straarup, RAHS 2020; research notes; Knud Birk memoir; Randers Kommune info board)"
+    }
+  ],
+  "invented": [],
+  "arc": "",
+  "relationships": [
+    {
+      "character": "kai_hoff",
+      "label": "co-planner"
+    },
+    {
+      "character": "ole_geisler",
+      "label": "takes orders from"
+    },
+    {
+      "character": "thorup_petersen",
+      "label": "warned by"
+    },
+    {
+      "character": "harvy_jensen",
+      "label": "judged, then doubted"
+    }
+  ],
+  "images": [],
+  "notes": "",
+  "sketch": ""
+}

@@ -1,0 +1,30 @@
+{
+  "name": "The Truppen-Ortskommandant, Randers",
+  "active": true,
+  "age_1943": "",
+  "role": "Wehrmacht garrison commander. The social man in Vogel",
+  "fate": "",
+  "known": [
+    {
+      "fact": "Documented as existing (the Statsskole was warned by the Truppenortskommandantur in 1944) but not named in our sources.",
+      "source": "characters/The_German_Officer.md §1"
+    },
+    {
+      "fact": "Army, not SS. The man who would actually sit in a hotel dining room.",
+      "source": "characters/The_German_Officer.md §1"
+    }
+  ],
+  "invented": [
+    "Older. The kind who had a decent war until November 1943. Someone in Randers was responsible for the security of that bridge, and on 18 November his career ended."
+  ],
+  "arc": "",
+  "relationships": [
+    {
+      "character": "ernst_vogel",
+      "label": "folded into"
+    }
+  ],
+  "images": [],
+  "notes": "",
+  "sketch": ""
+}

@@ -1,0 +1,34 @@
+{
+  "name": "Peter Valdemar Hovedskov",
+  "active": false,
+  "age_1943": "",
+  "role": "Ole's father. Gas and water master, Randers",
+  "fate": "",
+  "known": [
+    {
+      "fact": "Gas and water master for Randers.",
+      "source": "characters/Ole_Hovedskov.md §1 KNOWN"
+    }
+  ],
+  "invented": [
+    "A municipal man, a keeper of pipes and pressure, whose whole life is about things flowing safely under the ground. Two sons who both became artists; he understands neither and has paid for both. He pays for the violin. He will pay for the sanatorium. He never once says he is proud, and then, at the end, does something that says it."
+  ],
+  "arc": "",
+  "relationships": [
+    {
+      "character": "ole_hovedskov",
+      "label": "son"
+    },
+    {
+      "character": "borge_hovedskov",
+      "label": "son"
+    },
+    {
+      "character": "wilhelmine_hovedskov",
+      "label": "wife"
+    }
+  ],
+  "images": [],
+  "notes": "",
+  "sketch": ""
+}

@@ -1,0 +1,32 @@
+{
+  "name": "Per Moesgaard-Nielsen",
+  "active": false,
+  "age_1943": "17–18",
+  "role": "One of the two youngest",
+  "fate": "life imprisonment in Germany",
+  "known": [
+    {
+      "fact": "Caught almost by accident: ran down a staircase and it looked like flight.",
+      "source": "CHARACTERS.md v1 (Straarup, RAHS 2020; research notes; Knud Birk memoir; Randers Kommune info board)"
+    },
+    {
+      "fact": "Spared by the court because of his age: life imprisonment in Germany.",
+      "source": "CHARACTERS.md v1 (Straarup, RAHS 2020; research notes; Knud Birk memoir; Randers Kommune info board)"
+    }
+  ],
+  "invented": [],
+  "arc": "",
+  "relationships": [
+    {
+      "character": "kaj_sorensen",
+      "label": "the other youngest"
+    },
+    {
+      "character": "court_martial",
+      "label": "defence counsel pleads their ages and wins"
+    }
+  ],
+  "images": [],
+  "notes": "",
+  "sketch": ""
+}

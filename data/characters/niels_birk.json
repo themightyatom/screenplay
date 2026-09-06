@@ -1,0 +1,34 @@
+{
+  "name": "Niels Birk",
+  "active": false,
+  "age_1943": "",
+  "role": "The father. Blacksmith, foreman at Rekord",
+  "fate": "",
+  "known": [
+    {
+      "fact": "Blacksmith, ex-motorcycle racer, foreman at the Rekord machine factory, contracted to repair the dam contractor's machines.",
+      "source": "CHARACTERS.md v1 (Straarup, RAHS 2020; research notes; Knud Birk memoir; Randers Kommune info board)"
+    },
+    {
+      "fact": "When an informer comes asking about his son he says the boy is on a course in Copenhagen.",
+      "source": "CHARACTERS.md v1 (Straarup, RAHS 2020; research notes; Knud Birk memoir; Randers Kommune info board)"
+    }
+  ],
+  "invented": [
+    "The research notes say he was \"forced to work for the Nazis\". The scanned pages only say he had a repair contract with the Danish dam contractor. Decide whether we keep the invented version."
+  ],
+  "arc": "",
+  "relationships": [
+    {
+      "character": "knud_birk",
+      "label": "son"
+    },
+    {
+      "character": "ulla_birk",
+      "label": "wife"
+    }
+  ],
+  "images": [],
+  "notes": "",
+  "sketch": ""
+}

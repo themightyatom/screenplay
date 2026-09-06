@@ -1,0 +1,20 @@
+{
+  "title": "Flagged discrepancies in the sources",
+  "source": "CHARACTERS.md v1; Straarup (RAHS 2020); research notes; Randers Kommune info board.",
+  "summary": "1. The research notes say Anders Andersen and Otto Manley Christiansen were \"also executed\"; Straarup makes clear they were in other Randers groups and NOT on the bridge. Decide whether the film keeps that distinction.\n2. Ages: notes give Hoff 31 and Jacobsen \"unknown\"; Straarup gives Hoff 30, Jacobsen 29.\n3. Explosive: info board says 80 kg; Bak calculated 75 kg of \"808\" (not plastic PE2).\n4. Niels Birk \"forced to work for the Nazis\" is not in the scanned text; only a repair contract with the Danish dam contractor.\n5. Two different Jensens: Harvy (interpreter, Randers) and \"Jacob\" (SOE agent, Aarhus). The notes conflate the arrests; Straarup credits Harvy Jensen with the Langå round-up, \"Jacob\" with Hvidsten.\n6. Straarup says the two policemen were tied to a post after the charges were laid; the info board says before. Minor, but it changes the scene.",
+  "scenes": [],
+  "characters": [
+    "anders_andersen",
+    "otto_manley_christiansen",
+    "kai_hoff",
+    "ejvind_jacobsen",
+    "christian_bak",
+    "niels_birk",
+    "harvy_jensen",
+    "jacob_jensen",
+    "reserve_police_guards"
+  ],
+  "images": [],
+  "notes": "",
+  "sketch": ""
+}

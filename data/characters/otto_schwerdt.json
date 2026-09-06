@@ -1,0 +1,28 @@
+{
+  "name": "Otto Schwerdt",
+  "active": false,
+  "age_1943": "",
+  "role": "\"Peter Schäfer\". Runs the terror unit from Dec 1943",
+  "fate": "sentenced to death, freed 1953, died in Cologne",
+  "known": [
+    {
+      "fact": "Skorzeny's number two at the Mussolini rescue, sent by Himmler to run a terror unit in Denmark from December 1943.",
+      "source": "CHARACTERS.md v1 (Straarup, RAHS 2020; research notes; Knud Birk memoir; Randers Kommune info board)"
+    },
+    {
+      "fact": "Murders Kaj Munk a month after Skæring.",
+      "source": "CHARACTERS.md v1 (Straarup, RAHS 2020; research notes; Knud Birk memoir; Randers Kommune info board)"
+    }
+  ],
+  "invented": [],
+  "arc": "",
+  "relationships": [
+    {
+      "character": "kaj_munk",
+      "label": "murders"
+    }
+  ],
+  "images": [],
+  "notes": "",
+  "sketch": ""
+}

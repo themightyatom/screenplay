@@ -1,0 +1,32 @@
+{
+  "name": "Anders William Andersen",
+  "active": false,
+  "age_1943": "19",
+  "role": "Randers boy, Terrain Sports Club",
+  "fate": "shot Skæring Hede 2 Dec 1943",
+  "known": [
+    {
+      "fact": "Randers boy, Conservative Youth and FDF, member of Hoff's Terrain Sports Club.",
+      "source": "CHARACTERS.md v1 (Straarup, RAHS 2020; research notes; Knud Birk memoir; Randers Kommune info board)"
+    },
+    {
+      "fact": "Not on the bridge. Arrested at the dairy on 19 Nov and, told his friend has already confessed, gives the interrogator Sven Johannesen's name.",
+      "source": "CHARACTERS.md v1 (Straarup, RAHS 2020; research notes; Knud Birk memoir; Randers Kommune info board)"
+    }
+  ],
+  "invented": [],
+  "arc": "",
+  "relationships": [
+    {
+      "character": "sven_johannesen",
+      "label": "names under interrogation"
+    },
+    {
+      "character": "harvy_jensen",
+      "label": "broken by"
+    }
+  ],
+  "images": [],
+  "notes": "",
+  "sketch": ""
+}
