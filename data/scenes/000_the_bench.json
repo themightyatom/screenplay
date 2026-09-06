@@ -4,7 +4,9 @@
   "slug": "the_bench",
   "strand": "NOW",
   "date": "2026",
+  "setting": "EXT.",
   "location": "gudenaa_bench",
+  "time": "DAY",
   "characters": [
     "the_old_man",
     "the_cyclist"

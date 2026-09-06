@@ -3,6 +3,9 @@
 
 const STATUSES = ['idea', 'discussed', 'drafted', 'locked'];
 const STRANDS = ['NOW', 'THEN', 'LONDON'];
+// scene heading (slugline) parts: the prefixes Fountain recognises, and the usual time-of-day tails
+const SETTINGS = ['INT.', 'EXT.', 'INT./EXT.', 'EXT./INT.', 'I/E.', 'EST.'];
+const TIMES = ['DAY', 'NIGHT', 'DAWN', 'DUSK', 'MORNING', 'AFTERNOON', 'EVENING', 'CONTINUOUS', 'LATER', 'MOMENTS LATER', 'SAME TIME'];
 const TYPES = ['scenes', 'characters', 'locations', 'research'];
 const LABEL = { scenes: 'Scenes', characters: 'Characters', locations: 'Locations', research: 'Research', framing: 'Framing', script: 'Script' };
 const SINGULAR = { scenes: 'scene', characters: 'character', locations: 'location', research: 'research note' };
@@ -72,6 +75,13 @@ const displayName = it => it.data ? (it.data.name || it.data.title || it.file) :
 const nameOfIn = type => id => { const x = db[type].find(x => idOf(x.file) === id); return x && x.data ? displayName(x) : null; };
 const charName = nameOfIn('characters');
 const locName = nameOfIn('locations');
+
+// "INT. HOTEL RANDERS - NIGHT" from a scene's setting, location and time; whatever parts are filled in
+function sceneHeading(d) {
+  const place = d.location ? (locName(d.location) || d.location).toUpperCase() : '';
+  const head = [d.setting, place].filter(Boolean).join(' ');
+  return d.time ? (head ? `${head} - ${d.time}` : d.time) : head;
+}
 const sceneName = id => { const s = db.scenes.find(x => idOf(x.file) === id); return s && s.data ? `${String(s.data.number).padStart(2, '0')} ${s.data.title}` : null; };
 
 function slugify(s) {
@@ -158,7 +168,9 @@ function sceneCard(item, draggable) {
       el('span', { class: 'strand', dataset: { strand: d.strand }, text: d.strand || '?' })),
     el('div', { class: 'meta' },
       d.date && el('span', { text: d.date }),
+      d.setting && el('span', { text: d.setting }),
       d.location && el('span', { text: locName(d.location) || d.location }),
+      d.time && el('span', { text: d.time }),
       (d.characters || []).length ? el('span', { text: `${d.characters.length} cast` }) : null,
       d.script && d.script.trim() ? el('span', { text: 'script' }) : null),
     d.summary && el('div', { class: 'sum', text: d.summary })
@@ -221,7 +233,7 @@ async function newScene() {
   const number = nums.length ? Math.max(...nums) + 1 : 0;
   const scene = {
     number, title: 'Untitled', slug: 'untitled', strand: ui.strand === 'ALL' ? 'THEN' : ui.strand,
-    date: '', location: '', characters: [], summary: '', purpose: '', open: [],
+    date: '', setting: '', location: '', time: '', characters: [], summary: '', purpose: '', open: [],
     status: 'idea', script: '', images: [], notes: '', sketch: ''
   };
   try {
@@ -496,6 +508,15 @@ function linesArea(key, cls = '') {
   return ta;
 }
 
+function listInput(key, options, placeholder = '') {
+  // free text with a dropdown of standard values (input + datalist)
+  const d = current.data;
+  const id = 'dl-' + key;
+  const inp = el('input', { type: 'text', list: id, value: d[key] ?? '', placeholder, autocomplete: 'off' });
+  inp.addEventListener('input', () => { d[key] = inp.value; scheduleSave(); });
+  return el('div', {}, inp, el('datalist', { id }, ...options.map(v => el('option', { value: v }))));
+}
+
 function selectInput(key, options, allowEmpty = false) {
   const d = current.data;
   const sel = el('select', {},
@@ -688,9 +709,13 @@ function sceneEditor() {
       field('Status', selectInput('status', STATUSES.map(s => ({ value: s, label: s })))),
       field('Strand', selectInput('strand', STRANDS.map(s => ({ value: s, label: s })))),
       field('Story date', textInput('date'), 'sortable: 1943-11-17')),
-    field('Location', selectInput('location', db.locations.filter(l => l.data)
-      .sort((a, b) => (isActive(b) - isActive(a)) || a.data.name.localeCompare(b.data.name))
-      .map(l => ({ value: idOf(l.file), label: l.data.name + (isActive(l) ? '' : '  (inactive)') })), true)),
+    el('div', { class: 'row3' },
+      field('Setting', selectInput('setting', SETTINGS.map(s => ({ value: s, label: s })), true), 'INT./EXT.'),
+      field('Location', selectInput('location', db.locations.filter(l => l.data)
+        .sort((a, b) => (isActive(b) - isActive(a)) || a.data.name.localeCompare(b.data.name))
+        .map(l => ({ value: idOf(l.file), label: l.data.name + (isActive(l) ? '' : '  (inactive)') })), true)),
+      field('Time', listInput('time', TIMES, 'DAY / NIGHT / …'), 'or type your own')),
+    field('Scene heading', headingPreview(), 'Fountain slugline, built from the three above'),
     field('Characters', idListField('characters', db.characters, charName, 'Add character…')),
     field('Summary', textArea('summary'), 'what happens'),
     field('Purpose', textArea('purpose')),
@@ -704,6 +729,16 @@ function sceneEditor() {
   );
 }
 
+function headingPreview() {
+  // read-only slugline that follows the setting / location / time controls as they change
+  const out = el('div', { class: 'heading-preview' });
+  const refresh = () => { const h = sceneHeading(current.data); out.textContent = h || '—'; out.classList.toggle('muted', !h); };
+  refresh();
+  // the controls are siblings rendered alongside this; hook the panel body once it is in the DOM
+  queueMicrotask(() => { const body = out.closest('.pbody'); if (body) { body.addEventListener('input', refresh); body.addEventListener('change', refresh); } });
+  return out;
+}
+
 // ---------------------------------------------------------------- writing mode: one scene's Fountain, front and centre
 
 async function renderWrite(file) {
@@ -715,7 +750,16 @@ async function renderWrite(file) {
   ui.writing = item.file;
   const d = current.data;
 
-  const ta = el('textarea', { class: 'write-pad', spellcheck: 'true', placeholder: 'INT. HOTEL RANDERS, DINING ROOM - NIGHT\n\nFountain goes here. Scene headings in caps, character names in caps, dialogue underneath.', text: d.script || '' });
+  const heading = sceneHeading(d);
+  const ta = el('textarea', { class: 'write-pad', spellcheck: 'true', placeholder: (heading || 'INT. HOTEL RANDERS, DINING ROOM - NIGHT') + '\n\nFountain goes here. Scene headings in caps, character names in caps, dialogue underneath.', text: d.script || '' });
+  const insertHeading = () => {
+    // at the cursor, on its own line, with a blank line after; at the top if the script is empty
+    if (!heading) { toast('set Setting / Location / Time in scene details first', true); return; }
+    const s = ta.selectionStart, before = ta.value.slice(0, s);
+    const lead = !before || before.endsWith('\n\n') ? '' : before.endsWith('\n') ? '\n' : '\n\n';
+    ta.setRangeText(lead + heading + '\n\n', s, ta.selectionEnd, 'end');
+    ta.dispatchEvent(new Event('input')); ta.focus();
+  };
   const grow = () => { ta.style.height = 'auto'; ta.style.height = Math.max(ta.scrollHeight + 4, window.innerHeight * 0.7) + 'px'; };
   ta.addEventListener('input', () => { d.script = ta.value; scheduleSave(); grow(); });
   ta.addEventListener('keydown', e => {
@@ -735,13 +779,14 @@ async function renderWrite(file) {
       d.purpose ? el('p', {}, el('b', { text: 'Purpose. ' }), d.purpose) : null,
       (d.open || []).length ? el('p', {}, el('b', { text: 'Open. ' }), d.open.join(' · ')) : null,
       (d.characters || []).length ? el('p', {}, el('b', { text: 'Cast. ' }), d.characters.map(id => charName(id) || id).join(', ')) : null,
-      d.location ? el('p', {}, el('b', { text: 'Where. ' }), locName(d.location) || d.location) : null,
+      d.location || heading ? el('p', {}, el('b', { text: 'Where. ' }), heading || locName(d.location) || d.location) : null,
       d.notes ? el('p', { class: 'muted' }, el('b', { text: 'Notes. ' }), d.notes) : null));
 
   $main.replaceChildren(
     el('div', { class: 'toolbar write-head' },
       el('button', { class: 'btn ghost small', text: '← Board', onclick: () => { location.hash = 'scenes'; } }),
       el('button', { class: 'btn ghost small', text: 'Scene details', title: 'open the side panel', onclick: () => go('scenes', current.file) }),
+      el('button', { class: 'btn ghost small', text: '+ Heading', title: heading ? `insert "${heading}" at the cursor` : 'set Setting / Location / Time in scene details first', onclick: insertHeading }),
       el('h1', {}, el('span', { class: 'num', text: String(d.number).padStart(2, '0') + ' ' }), d.title || '(untitled)'),
       el('span', { class: 'strand', dataset: { strand: d.strand }, text: d.strand || '?' }),
       el('span', { class: 'file muted', text: `data/scenes/${current.file}` }),

@@ -16,8 +16,8 @@ Everything lives in `data/` as one JSON file per item. Edit them in the UI, in a
 ```
 data/
   framing.json                 narrator, listener, strands, weight, open, notes, sketch, images
-  scenes/NNN_slug.json         number, title, slug, strand, date, location, characters, summary,
-                               purpose, open, status, script (Fountain), images, notes, sketch
+  scenes/NNN_slug.json         number, title, slug, strand, date, setting, location, time, characters,
+                               summary, purpose, open, status, script (Fountain), images, notes, sketch
   characters/slug.json         name, active, age_1943, role, fate, known[{fact,source}], invented[],
                                arc, relationships[{character,label}], images, notes, sketch
   locations/slug.json          name, active, description, real, images, notes, sketch
@@ -28,6 +28,7 @@ images/                        uploads land in images/<type>/<id>/; items refere
 - `strand` is one of `NOW`, `THEN`, `LONDON`.
 - `status` is one of `idea`, `discussed`, `drafted`, `locked`.
 - `date` is a plain sortable string (`1943-11-17`, `1943-10`, `2026`).
+- `setting` is a Fountain scene-heading prefix (`INT.`, `EXT.`, `INT./EXT.`, `EXT./INT.`, `I/E.`, `EST.`); `time` is the tail (`DAY`, `NIGHT`, `CONTINUOUS`, … or free text). The UI composes `SETTING LOCATION - TIME` as the scene heading and can insert it into the script.
 - Character and location references use the file name without `.json`.
 - Renaming a scene's number or slug renames its file.
 - A malformed file is shown raw in the UI and can be fixed there; nothing is overwritten on load.

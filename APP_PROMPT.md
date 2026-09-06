@@ -4,7 +4,7 @@ Build a small local web app for developing a screenplay. Weekend-sized. No frame
 
 ## Data model (files, one per item, JSON or YAML)
 
-- `data/scenes/NNN_slug.json` — number, title, slug, strand (NOW / THEN / LONDON), date in story, location id, character ids, summary, purpose, open questions (list), status (idea / discussed / drafted / locked), script (Fountain text, optional), images (list of paths), notes (free text).
+- `data/scenes/NNN_slug.json` — number, title, slug, strand (NOW / THEN / LONDON), date in story, setting (INT. / EXT. / …), location id, time (DAY / NIGHT / …), character ids, summary, purpose, open questions (list), status (idea / discussed / drafted / locked), script (Fountain text, optional), images (list of paths), notes (free text).
 - `data/characters/slug.json` — name, age in 1943, role, known facts (list, each with a source), invented facts (list), arc notes, relationships (list of character ids with a label), images, notes.
 - `data/locations/slug.json` — name, description, real/invented, images, notes.
 - `data/research/slug.json` — title, source, summary, which scenes or characters it touches.

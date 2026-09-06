@@ -4,7 +4,9 @@
   "slug": "hotel_randers_dining_room",
   "strand": "THEN",
   "date": "1943-10",
+  "setting": "INT.",
   "location": "hotel_randers",
+  "time": "NIGHT",
   "characters": [
     "ole_hovedskov",
     "inger",
