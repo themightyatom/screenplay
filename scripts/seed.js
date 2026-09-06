@@ -43,8 +43,8 @@ put('framing.json', {
 
 // ---------------------------------------------------------------- scenes
 
-put('scenes/000_the_bench.json', {
-  number: 0,
+put('scenes/the_bench.json', {
+  order: 0,
   title: 'The Bench',
   slug: 'the_bench',
   strand: 'NOW',
@@ -63,8 +63,8 @@ put('scenes/000_the_bench.json', {
   sketch: ''
 });
 
-put('scenes/001_hotel_randers_dining_room.json', {
-  number: 1,
+put('scenes/hotel_randers_dining_room.json', {
+  order: 1,
   title: 'Hotel Randers, Dining Room',
   slug: 'hotel_randers_dining_room',
   strand: 'THEN',

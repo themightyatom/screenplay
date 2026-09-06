@@ -38,28 +38,12 @@ function slugify(s) {
     .slice(0, 60) || 'untitled';
 }
 
-// a scene's number is optional: null when blank, so unnumbered scenes can be ordered later
-function sceneNumber(scene) {
-  const v = scene && scene.number;
-  if (v === '' || v == null) return null;
-  const n = Number(v);
-  return Number.isFinite(n) ? n : null;
-}
-
-// numbered scenes first by number, unnumbered after (by title) so the order is stable
-function bySceneOrder(a, b) {
-  const na = sceneNumber(a.data), nb = sceneNumber(b.data);
-  if (na != null && nb != null) return na - nb;
-  if (na != null) return -1;
-  if (nb != null) return 1;
-  return String(a.data.title || '').localeCompare(String(b.data.title || ''));
-}
-
+// scenes are not numbered; the file is named by slug and the running order lives in 'order' (set by dragging)
 function sceneFileName(scene) {
-  const n = sceneNumber(scene);
-  const slug = slugify(scene.slug || scene.title);
-  return n == null ? `${slug}.json` : `${String(n).padStart(3, '0')}_${slug}.json`;
+  return `${slugify(scene.slug || scene.title)}.json`;
 }
+
+const bySceneOrder = (a, b) => (Number(a.data.order) || 0) - (Number(b.data.order) || 0);
 
 async function atomicWrite(file, text) {
   const tmp = file + '.tmp';
@@ -153,6 +137,26 @@ app.post('/api/upload', express.raw({ type: () => true, limit: '50mb' }), async 
     while (fs.existsSync(path.join(dir, file))) file = `${stem}_${n++}${ext}`;
     await fsp.writeFile(path.join(dir, file), req.body);
     res.status(201).json({ path: path.relative(ROOT, path.join(dir, file)).split(path.sep).join('/') });
+  } catch (e) { res.status(500).json({ error: e.message }); }
+});
+
+// ---------- scene running order ----------
+
+// body: { files: [...] } in the wanted order; each scene's 'order' becomes its index. Only changed files are written.
+app.post('/api/scenes/reorder', async (req, res) => {
+  const files = Array.isArray(req.body && req.body.files) ? req.body.files.map(safeFile) : null;
+  if (!files || files.some(f => !f)) return res.status(400).json({ error: 'files: array of scene file names' });
+  try {
+    let changed = 0;
+    for (const [i, file] of files.entries()) {
+      const p = path.join(DATA, 'scenes', file);
+      if (!fs.existsSync(p)) continue;
+      const item = await readItem('scenes', file);
+      if (!item.data || item.data.order === i) continue;
+      await atomicWrite(p, pretty({ ...item.data, order: i }));
+      changed++;
+    }
+    res.json({ ok: true, changed });
   } catch (e) { res.status(500).json({ error: e.message }); }
 });
 

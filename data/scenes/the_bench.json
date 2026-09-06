@@ -1,7 +1,7 @@
 {
-  "number": 0,
   "title": "The Bench",
   "slug": "the_bench",
+  "order": 1,
   "strand": "NOW",
   "date": "2026",
   "setting": "EXT.",

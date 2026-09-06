@@ -1,7 +1,7 @@
 {
-  "number": 1,
   "title": "Hotel Randers, Dining Room",
   "slug": "hotel_randers_dining_room",
+  "order": 2,
   "strand": "THEN",
   "date": "1943-10",
   "setting": "INT.",

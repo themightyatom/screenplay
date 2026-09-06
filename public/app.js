@@ -82,18 +82,10 @@ function sceneHeading(d) {
   const head = [d.setting, place].filter(Boolean).join(' ');
   return d.time ? (head ? `${head} - ${d.time}` : d.time) : head;
 }
-// scene numbers are optional (null when blank); unnumbered scenes sort after numbered ones, by title
-const numOf = d => { const v = d && d.number; if (v === '' || v == null) return null; const n = Number(v); return Number.isFinite(n) ? n : null; };
-const numLabel = d => { const n = numOf(d); return n == null ? '' : String(n).padStart(2, '0'); };
-function bySceneOrder(a, b) {
-  if (!a.data || !b.data) return (a.data ? 0 : 1) - (b.data ? 0 : 1);
-  const na = numOf(a.data), nb = numOf(b.data);
-  if (na != null && nb != null) return na - nb;
-  if (na != null) return -1;
-  if (nb != null) return 1;
-  return String(a.data.title || '').localeCompare(String(b.data.title || ''));
-}
-const sceneName = id => { const s = db.scenes.find(x => idOf(x.file) === id); return s && s.data ? [numLabel(s.data), s.data.title].filter(Boolean).join(' ') : null; };
+// scenes have no numbers: the running order is the hidden 'order' field, set by dragging cards on the board
+const orderOf = s => (s.data && Number(s.data.order)) || 0;
+const bySceneOrder = (a, b) => orderOf(a) - orderOf(b);
+const sceneName = id => { const s = db.scenes.find(x => idOf(x.file) === id); return s && s.data ? s.data.title : null; };
 
 function slugify(s) {
   return String(s || '').toLowerCase()
@@ -174,7 +166,6 @@ function sceneCard(item, draggable) {
     ondblclick: () => { clearTimeout(sceneCard._t); go('scenes', item.file + '/write'); }
   },
     el('div', { class: 'head' },
-      numOf(d) != null ? el('span', { class: 'num', text: numLabel(d) }) : null,
       el('span', { class: 'title', text: d.title || '(untitled)' }),
       el('span', { class: 'strand', dataset: { strand: d.strand }, text: d.strand || '?' })),
     el('div', { class: 'meta' },
@@ -206,24 +197,50 @@ function renderBoard() {
     const col = el('div', { class: 'col', dataset: { status } },
       el('h2', {}, el('span', { text: status }), el('span', { text: items.length })),
       ...items.map(s => sceneCard(s, true)));
-    col.addEventListener('dragover', e => { e.preventDefault(); e.dataTransfer.dropEffect = 'move'; col.classList.add('over'); });
-    col.addEventListener('dragleave', () => col.classList.remove('over'));
-    col.addEventListener('drop', async e => {
-      e.preventDefault(); col.classList.remove('over');
+    // drop position: the first card whose midpoint is below the pointer gets the card dropped before it; none = end of column
+    const cardsIn = () => [...col.querySelectorAll('.card:not(.dragging)')];
+    const targetAt = y => cardsIn().find(c => { const r = c.getBoundingClientRect(); return y < r.top + r.height / 2; }) || null;
+    const clearMarks = () => { col.classList.remove('over', 'drop-end'); cardsIn().forEach(c => c.classList.remove('drop-before')); };
+    col.addEventListener('dragover', e => {
+      e.preventDefault(); e.dataTransfer.dropEffect = 'move'; col.classList.add('over');
+      const t = targetAt(e.clientY);
+      cardsIn().forEach(c => c.classList.toggle('drop-before', c === t));
+      col.classList.toggle('drop-end', !t);
+    });
+    col.addEventListener('dragleave', e => { if (!col.contains(e.relatedTarget)) clearMarks(); });
+    col.addEventListener('drop', e => {
+      e.preventDefault();
       const file = e.dataTransfer.getData('text/plain');
-      const item = db.scenes.find(s => s.file === file);
-      if (!item || !item.data || item.data.status === status) return;
-      try {
-        const saved = await api('PUT', itemUrl('scenes', file), { ...item.data, status });
-        toast(`${saved.file} → ${status}`);
-        if (current && current.type === 'scenes' && current.file === file) { current.data.status = status; current.file = saved.file; }
-        await loadAll(); renderScenes();
-        if (current && current.type === 'scenes') openItem('scenes', current.file);
-      } catch (err) { toast(err.message, true); }
+      const visible = cardsIn(), t = targetAt(e.clientY);
+      clearMarks();
+      const before = t ? t.dataset.file : null;
+      const after = !t && visible.length ? visible[visible.length - 1].dataset.file : null;
+      moveScene(file, status, before, after);
     });
     board.append(col);
   }
   return board;
+}
+
+// put one scene into a status column at a position: before 'beforeFile', else after 'afterFile', else at the very end.
+// The running order is global across columns, so the sequence is rebuilt and every changed 'order' is written.
+async function moveScene(file, status, beforeFile, afterFile) {
+  const item = db.scenes.find(s => s.file === file);
+  if (!item || !item.data) return;
+  const seq = db.scenes.filter(s => s.data).sort(bySceneOrder).map(s => s.file).filter(f => f !== file);
+  let at = seq.length;
+  if (beforeFile && seq.includes(beforeFile)) at = seq.indexOf(beforeFile);
+  else if (afterFile && seq.includes(afterFile)) at = seq.indexOf(afterFile) + 1;
+  seq.splice(at, 0, file);
+  const moved = item.data.status !== status;
+  try {
+    if (moved) await api('PUT', itemUrl('scenes', file), { ...item.data, status });
+    await api('POST', '/api/scenes/reorder', { files: seq });
+    toast(moved ? `${item.data.title || file} → ${status}` : `moved ${item.data.title || file}`);
+    await loadAll(); renderScenes();
+    // re-open so the panel's copy of the scene picks up the new status / order rather than saving stale ones back
+    if (current && current.type === 'scenes') openItem('scenes', current.file);
+  } catch (err) { toast(err.message, true); }
 }
 
 function renderTimeline() {
@@ -240,9 +257,10 @@ function renderTimeline() {
 }
 
 async function newScene() {
-  // new scenes start unnumbered; give them a number in the editor when the order is known
+  // new scenes go to the end of the running order; drag the card to place it
+  const order = db.scenes.filter(s => s.data).reduce((m, s) => Math.max(m, orderOf(s)), -1) + 1;
   const scene = {
-    number: '', title: 'Untitled', slug: 'untitled', strand: ui.strand === 'ALL' ? 'THEN' : ui.strand,
+    title: 'Untitled', slug: 'untitled', order, strand: ui.strand === 'ALL' ? 'THEN' : ui.strand,
     date: '', setting: '', location: '', time: '', characters: [], summary: '', purpose: '', open: [],
     status: 'idea', script: '', images: [], notes: '', sketch: ''
   };
@@ -381,7 +399,7 @@ async function renderScript() {
     el('div', { class: 'toolbar' }, el('h1', { text: 'Script' }),
       el('span', { class: 'muted', text: `${locked.length} locked scene${locked.length === 1 ? '' : 's'} · read-only · Fountain` }),
       el('div', { class: 'spacer' }),
-      locked.length ? el('span', { class: 'muted', text: locked.map(s => numLabel(s.data) || s.data.title).join(' · ') }) : null),
+      locked.length ? el('span', { class: 'muted', text: locked.map(s => s.data.title).join(' · ') }) : null),
     text.trim() ? el('pre', { class: 'script', text })
       : el('div', { class: 'empty', text: locked.length ? 'Locked scenes exist but none has Fountain in its Script field yet.' : 'No locked scenes yet. Lock a scene on the board and its Fountain appears here.' })
   );
@@ -711,8 +729,7 @@ function usedBy(type, id) {
 
 function sceneEditor() {
   return el('div', { class: 'pbody' },
-    el('div', { class: 'row3' },
-      field('No.', textInput('number', { number: true }), 'optional'),
+    el('div', { class: 'row' },
       field('Title', textInput('title')),
       field('Slug', textInput('slug'), 'file name')),
     el('div', { class: 'row3' },
@@ -797,7 +814,7 @@ async function renderWrite(file) {
       el('button', { class: 'btn ghost small', text: '← Board', onclick: () => { location.hash = 'scenes'; } }),
       el('button', { class: 'btn ghost small', text: 'Scene details', title: 'open the side panel', onclick: () => go('scenes', current.file) }),
       el('button', { class: 'btn ghost small', text: '+ Heading', title: heading ? `insert "${heading}" at the cursor` : 'set Setting / Location / Time in scene details first', onclick: insertHeading }),
-      el('h1', {}, numOf(d) != null ? el('span', { class: 'num', text: numLabel(d) + ' ' }) : null, d.title || '(untitled)'),
+      el('h1', {}, d.title || '(untitled)'),
       el('span', { class: 'strand', dataset: { strand: d.strand }, text: d.strand || '?' }),
       el('span', { class: 'file muted', text: `data/scenes/${current.file}` }),
       el('div', { class: 'spacer' }),
