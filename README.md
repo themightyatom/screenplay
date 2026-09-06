@@ -16,7 +16,7 @@ Everything lives in `data/` as one JSON file per item. Edit them in the UI, in a
 ```
 data/
   framing.json                 narrator, listener, strands, weight, open, notes, sketch, images
-  scenes/NNN_slug.json         number, title, slug, strand, date, setting, location, time, characters,
+  scenes/[NNN_]slug.json       number (optional), title, slug, strand, date, setting, location, time, characters,
                                summary, purpose, open, status, script (Fountain), images, notes, sketch
   characters/slug.json         name, active, age_1943, role, fate, known[{fact,source}], invented[],
                                arc, relationships[{character,label}], images, notes, sketch
@@ -30,6 +30,7 @@ images/                        uploads land in images/<type>/<id>/; items refere
 - `date` is a plain sortable string (`1943-11-17`, `1943-10`, `2026`).
 - `setting` is a Fountain scene-heading prefix (`INT.`, `EXT.`, `INT./EXT.`, `EXT./INT.`, `I/E.`, `EST.`); `time` is the tail (`DAY`, `NIGHT`, `CONTINUOUS`, … or free text). The UI composes `SETTING LOCATION - TIME` as the scene heading and can insert it into the script.
 - Character and location references use the file name without `.json`.
+- Scene numbers are optional. Numbered scenes sort first by number, unnumbered ones after by title; an unnumbered scene's file is `slug.json` with no prefix. New scenes start unnumbered.
 - Renaming a scene's number or slug renames its file.
 - A malformed file is shown raw in the UI and can be fixed there; nothing is overwritten on load.
 - New characters, locations and research notes are named on creation; the name's slug becomes the file name and stays fixed (other files reference it). Scenes are the exception: renumbering or re-slugging a scene renames its file.

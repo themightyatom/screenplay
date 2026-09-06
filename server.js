@@ -38,10 +38,27 @@ function slugify(s) {
     .slice(0, 60) || 'untitled';
 }
 
+// a scene's number is optional: null when blank, so unnumbered scenes can be ordered later
+function sceneNumber(scene) {
+  const v = scene && scene.number;
+  if (v === '' || v == null) return null;
+  const n = Number(v);
+  return Number.isFinite(n) ? n : null;
+}
+
+// numbered scenes first by number, unnumbered after (by title) so the order is stable
+function bySceneOrder(a, b) {
+  const na = sceneNumber(a.data), nb = sceneNumber(b.data);
+  if (na != null && nb != null) return na - nb;
+  if (na != null) return -1;
+  if (nb != null) return 1;
+  return String(a.data.title || '').localeCompare(String(b.data.title || ''));
+}
+
 function sceneFileName(scene) {
-  const n = Number.isFinite(Number(scene.number)) ? Number(scene.number) : 0;
+  const n = sceneNumber(scene);
   const slug = slugify(scene.slug || scene.title);
-  return `${String(n).padStart(3, '0')}_${slug}.json`;
+  return n == null ? `${slug}.json` : `${String(n).padStart(3, '0')}_${slug}.json`;
 }
 
 async function atomicWrite(file, text) {
@@ -145,7 +162,7 @@ app.get('/api/script', async (req, res) => {
   const items = await listItems('scenes');
   const locked = items
     .filter(i => i.data && i.data.status === 'locked')
-    .sort((a, b) => Number(a.data.number) - Number(b.data.number));
+    .sort(bySceneOrder);
   const parts = locked.map(i => (i.data.script || '').trim()).filter(Boolean);
   res.type('text/plain').send(parts.join('\n\n') + (parts.length ? '\n' : ''));
 });
