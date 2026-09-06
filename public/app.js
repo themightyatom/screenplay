@@ -260,7 +260,7 @@ async function newScene() {
   // new scenes go to the end of the running order; drag the card to place it
   const order = db.scenes.filter(s => s.data).reduce((m, s) => Math.max(m, orderOf(s)), -1) + 1;
   const scene = {
-    title: 'Untitled', slug: 'untitled', order, strand: ui.strand === 'ALL' ? 'THEN' : ui.strand,
+    title: 'Untitled', slug: '', order, strand: ui.strand === 'ALL' ? 'THEN' : ui.strand,
     date: '', setting: '', location: '', time: '', characters: [], summary: '', purpose: '', open: [],
     status: 'idea', script: '', images: [], notes: '', sketch: ''
   };
@@ -517,8 +517,25 @@ function field(label, control, hint) {
 
 function textInput(key, opts = {}) {
   const d = current.data;
-  const inp = el('input', { type: opts.number ? 'number' : 'text', value: d[key] ?? '' });
+  const inp = el('input', { type: opts.number ? 'number' : 'text', value: d[key] ?? '', dataset: { key } });
   inp.addEventListener('input', () => { d[key] = opts.number ? (inp.value === '' ? '' : Number(inp.value)) : inp.value; scheduleSave(); });
+  return inp;
+}
+
+function sceneTitleInput() {
+  // the slug (file name) follows the title until the slug has been edited by hand
+  const d = current.data;
+  const inp = el('input', { type: 'text', value: d.title ?? '', dataset: { key: 'title' } });
+  inp.addEventListener('input', () => {
+    const follows = !d.slug || d.slug === 'untitled' || d.slug === slugify(d.title);
+    d.title = inp.value;
+    if (follows) {
+      d.slug = slugify(d.title);
+      const slugBox = inp.closest('.pbody') && inp.closest('.pbody').querySelector('input[data-key="slug"]');
+      if (slugBox) slugBox.value = d.slug;
+    }
+    scheduleSave();
+  });
   return inp;
 }
 
@@ -730,8 +747,8 @@ function usedBy(type, id) {
 function sceneEditor() {
   return el('div', { class: 'pbody' },
     el('div', { class: 'row' },
-      field('Title', textInput('title')),
-      field('Slug', textInput('slug'), 'file name')),
+      field('Title', sceneTitleInput()),
+      field('Slug', textInput('slug'), 'file name · follows the title until you edit it')),
     el('div', { class: 'row3' },
       field('Status', selectInput('status', STATUSES.map(s => ({ value: s, label: s })))),
       field('Strand', selectInput('strand', STRANDS.map(s => ({ value: s, label: s })))),
